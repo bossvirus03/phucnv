@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encryption and Decryption</title>
+    <link rel="stylesheet" href="./../static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Encryption and Decryption</h1>
+      <form id="key-form">
+        <label for="p">Enter value for p:</label>
+        <input type="number" id="p" required />
+        <label for="a">Enter value for a:</label>
+        <input type="number" id="a" required />
+        <label for="x">Enter value for x:</label>
+        <input type="number" id="x" required />
+        <button type="button" onclick="generateKeys()">Generate Keys</button>
+      </form>
+
+      <div id="keys-section" style="display: none">
+        <p><strong>Public Key:</strong> <span id="public-key"></span></p>
+        <p><strong>Private Key:</strong> <span id="private-key"></span></p>
+      </div>
+
+      <div style="display: flex; gap: 30px">
+        <form id="encrypto-form" style="display: none">
+          <label for="input-encrypt-text">Input Text:</label>
+          <textarea id="input-encrypt-text" rows="4"></textarea>
+          <button type="button" onclick="encryptText()">Encrypt</button>
+        </form>
+        <form id="decrypto-form" style="display: none">
+          <label for="input-decrypt-text">Input Encrypted Text:</label>
+          <textarea id="input-decrypt-text" rows="4"></textarea>
+          <button type="button" onclick="decryptText()">Decrypt</button>
+        </form>
+      </div>
+
+      <div>
+        <h2>Results</h2>
+        <div style="gap: 30px">
+          <div class="result">
+            <p>
+              <strong>Encrypted Text:</strong> <span id="encrypted-text"></span>
+            </p>
+          </div>
+          <div class="result">
+            <p>
+              <strong>Decrypted Text:</strong> <span id="decrypted-text"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p style="text-align: center">copy right nv phuc</p>
+    </div>
+
+    <script src="./../static/main.js"></script>
+  </body>
+</html>
