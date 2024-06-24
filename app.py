@@ -76,5 +76,12 @@ def decrypt():
     decrypted_text = "".join(chr(ch) for ch in text_decode)
     return jsonify(decrypted_text)
 
+@app.route('/getrandompxa', methods=['GET'])
+def get_random_p_x_a():
+    p = tu_sinh(1000, 10000)
+    a = random.randint(1000, 10000)
+    x = random.randint(1000, 10000)
+    return jsonify(p=p, x=x, a=a)
+
 if __name__ == '__main__':
     app.run(debug=True)
